@@ -1,0 +1,17 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light.d-flex.justify-content-between
+    a.navbar-brand(href='/') NODEJS
+    ul.navbar-nav
+        if user
+            li.nav-item
+                a.nav-link(href='/users') All Users
+            li.nav-item
+                a.nav-link(href='/user') Profil
+        if !user
+            li.nav-item
+                a.nav-link(href='/signin') Login
+            li.nav-item
+                a.nav-link(href='/') Register
+        else
+            li.nav-item
+                a(href='/signout')
+                    button.btn.btn-danger Logout

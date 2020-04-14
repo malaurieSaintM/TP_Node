@@ -1,0 +1,18 @@
+doctype html
+html
+    head
+        title Page #{name}
+        meta(charset='utf-8')
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+    body
+        include nav.pug
+
+        div.container.mt-6.d-flex.flex-column
+            p   Fiche utilisateur de
+                b.ml-1 #{user.name}
+            p   Email
+                b.ml-1 #{user.email}
+                form(method='POST' action='/user/delete/'+ user._id)
+                    button.btn.btn-danger(type='submit') Delete User
+            a(href='/user')
+                button.btn.btn-dark Retour
